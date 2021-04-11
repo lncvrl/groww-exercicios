@@ -13,8 +13,20 @@ O lado A sempre deverá ser o maior de todos(Criar um mecânismo para tratar iss
 Caso sejam fornecidos valores negativos, retornar erro para o usuário.
 
 */
-function calculaMédia() {
-
+function calculaMedia(A, B, C) {
+    
+    if (A >= B + C) {
+        return ('Não existe triangulo')
+    }
+    if (A**2 == B**2 + C**2) {
+        return ('Triangulo retangulo')
+    }
+    if (A**2 > B**2 + C**2) {
+        return ('Triangulo obtusangulo')
+    }
+    if (A**2 < B**2 + C**2) {
+        return ('Triangulo acutangulo')   
+    }
 }
 
 
@@ -33,7 +45,20 @@ Uma empresa quer aumentar o salário dos funcionários dada a seguinte tábela
 Crie um código que recebe o salario do funcionário(apenas numérico) e retorne o salario atual, a porcentagem de correção e o valor corrigido
 */
 
-function corrigiSalario() {
+function corrigiSalario(salario) {
+        if(salario < 400.00){
+            return salario + salario * 0.15
+       }else if(salario >= 400.01 && salario <= 700.00){
+            return salario + salario * 0.12
+       }else if(salario >= 700.01 && salario <= 1000.00){
+            return salario + salario * 0.10
+       }else if(salario >= 1000.01 && salario <= 2000.00){
+            return salario + salario * 0.07
+       }else if(salario >= 2500.01 && salario <= 3500.00){
+            return salario + salario * 0.04
+       }else if(salario > 3500.01){
+            return salario
+       }
 
 }
 
